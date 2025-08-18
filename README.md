@@ -55,4 +55,4 @@ Demo project using ray[tune], distributed accross multiple containers thanks to 
 
 ## xgboost demo
 
-Demo project using xgboost distributed with processes spread accross multiple containers.
+Demo project using xgboost distributed with processes spread accross multiple containers. 
