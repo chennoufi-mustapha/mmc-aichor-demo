@@ -9,13 +9,13 @@ builder:
 spec:
   operator: jobset
   image: jobset-multi-jobs
-  command: "python -u src/main.10-10-10.py"
+  command: "python -u src/main.10-2-10.py"
 
   types:
     worker:
       count: 10
       completions: 10   # optional, defaults to 1
-      parallelisms: 10  # optional, defaults to 1
+      parallelisms: 2   # optional, defaults to 1
       resources:
         cpus: 2
         ramRatio: 2
