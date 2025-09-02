@@ -30,7 +30,7 @@ if __name__ == '__main__':
     print(f"here are the rest of the jobset variables in this container:")
     jobsetop()
 
-    rank = get_rank()
+    rank = int(get_rank())
 
     start = rank * 100 + 1
     end = start + 99
