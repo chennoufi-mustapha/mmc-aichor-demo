@@ -9,7 +9,7 @@ builder:
 spec:
   operator: jobset
   image: jobset-multi-jobs
-  command: "python3 -u main.py --operator=jobset --sleep=300 --tb-write=True"
+  command: "python3 -u ./src/main.10-1-1.py --operator=jobset --sleep=300 --tb-write=True"
 
   types:
     worker:
