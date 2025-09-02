@@ -9,7 +9,7 @@ builder:
 spec:
   operator: jobset
   image: jobset-multi-jobs
-  command: "python -u src/main.py"
+  command: "python -u main.py"
 
   types:
     worker:
