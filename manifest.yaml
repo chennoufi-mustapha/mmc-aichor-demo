@@ -1,32 +1,20 @@
 kind: AIchorManifest
-apiVersion: 0.2.2
+apiVersion: 0.2.1
 
 builder:
-  image: image
-  context: smoke-test # smoke-test folder
-  dockerfile: ./build/ray.Dockerfile # need ray installed
+  image: jobset-multi-jobs
+  dockerfile: ./Dockerfile
+  context: parallel-jobs-demo
 
 spec:
-  operator: kuberay
-  image: image
-  command: "python3 -u main.py --operator=kuberay --sleep=300 --tb-write=True"
-
-  debug:
-    jupyter: false
-
-  tensorboard:
-    enabled: true
+  operator: jobset
+  image: jobset-multi-jobs
+  command: "python -u src/main.py"
 
   types:
-    Head:
+    worker:
+      count: 10
       resources:
-        cpus: 1
+        cpus: 20
         ramRatio: 2
-
-    Workers:
-      - name: cpu-workers
-        count: 1
-        resources:
-          cpus: 1
-          ramRatio: 2
-          shmSizeGB: 0
+        shmSizeGB: 0
