@@ -9,18 +9,14 @@ builder:
 spec:
   operator: jobset
   image: jobset-multi-jobs
-  command: "python -u src/main.wkr-heavy-1-1-1.py"
+  command: "python -u src/main.10-10-10.py"
 
   types:
-    worker-heavy:
-      count: 1
-      resources:
-        cpus: 60
-        ramRatio: 2
-        shmSizeGB: 0
     worker:
-      count: 7
+      count: 10
+      completions: 10   # optional, defaults to 1
+      parallelisms: 10  # optional, defaults to 1
       resources:
-        cpus: 20
+        cpus: 2
         ramRatio: 2
         shmSizeGB: 0
