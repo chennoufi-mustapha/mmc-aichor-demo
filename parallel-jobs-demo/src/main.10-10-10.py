@@ -40,4 +40,4 @@ if __name__ == '__main__':
     completion_start = index * 10 + 1
     completion_end= completion_start + 9
     print(f"Actions {start+completion_start} to {start+completion_end}")
-    time.sleep(random.randint(10, 60))
+    time.sleep(0.5)
