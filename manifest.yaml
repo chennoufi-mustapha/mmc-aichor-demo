@@ -14,7 +14,7 @@ spec:
   types:
     worker:
       count: 10
-      completions: 10   # optional, defaults to 1
+      completions: 10   #  optional, defaults to 1
       parallelisms: 2   # optional, defaults to 1
       resources:
         cpus: 2
