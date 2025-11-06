@@ -1,15 +1,16 @@
+# yaml-language-server: $schema=https://api.aichor.dev/schema/latest/manifest.schema.json
 kind: AIchorManifest
 apiVersion: 0.2.2
 
 builder:
-  image: image
-  context: smoke-test # smoke-test folder
-  dockerfile: ./build/Dockerfile
+  image: xgboost-demo
+  context: xgboost-demo
+  dockerfile: ./Dockerfile
 
 spec:
   operator: xgboost
-  image: image
-  command: "python3 -u main.py --operator=xgboost --sleep=300 --tb-write=True"
+  image: xgboost-demo
+  command: "python src/train.py"
 
   tensorboard:
     enabled: true
@@ -18,12 +19,12 @@ spec:
     Master:
       count: 1
       resources:
-        cpus: 1
+        cpus: 2
         ramRatio: 2
         shmSizeGB: 0
     Worker:
       count: 1
       resources:
-        cpus: 1
+        cpus: 2
         ramRatio: 2
         shmSizeGB: 0
