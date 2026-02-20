@@ -9,9 +9,9 @@ builder:
   dockerfile: ./build/Dockerfile
 
 spec:
-  operator: xgboost
+  operator: pytorch
   image: image
-  command: "python3 -u main.py --operator=xgboost --sleep=300 --tb-write=True"
+  command: "python3 -u main.py --operator=pytorch --sleep=300 --tb-write=True"
 
   tensorboard:
     enabled: true
