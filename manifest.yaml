@@ -9,16 +9,16 @@ builder:
   dockerfile: ./build/Dockerfile
 
 spec:
-  operator: jax
+  operator: xgboost
   image: image
-  command: "python3 -u main.py --operator=jax --sleep=300 --tb-write=True"
+  command: "python3 -u main.py --operator=xgboost --sleep=300 --tb-write=True"
 
   tensorboard:
     enabled: true
 
   types:
     worker:
-      count: 1
+      count: 2
       resources:
         cpus: 1
         ramRatio: 2
