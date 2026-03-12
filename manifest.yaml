@@ -1,4 +1,4 @@
-#  yaml-language-server: $schema=https://instadeep.aichor.ai/schema/latest/manifest.schema.json
+# yaml-language-server: $schema=https://instadeep.aichor.ai/schema/latest/manifest.schema.json
 
 kind: AIchorManifest
 apiVersion: 0.2.2
@@ -9,18 +9,15 @@ builder:
   dockerfile: ./build/Dockerfile
 
 spec:
-  operator: jobset
+  operator: jax
   image: image
-  command: "python3 -u main.py --operator=jobset --sleep=500"
-  timeout: "3m"
+  command: "python3 -u main.py --operator=jax --sleep=300 --tb-write=True"
+  timeout: "2m"
+
+  tensorboard:
+    enabled: true
 
   types:
-    master:
-      count: 1
-      resources:
-        cpus: 1
-        ramRatio: 2
-        shmSizeGB: 0
     worker:
       count: 1
       resources:
