@@ -11,15 +11,8 @@ builder:
 spec:
   operator: jobset
   image: image
-  command: "python3 -u main.py --operator=jobset --sleep=300 --tb-write=True"
-
-  tensorboard:
-    enabled: true
-
-  storage:
-   attachExistingPVCs:
-    - name: mchennoufi-d-392698ae86c44ed6-pvc-test-342a97e0345747fa
-      mountPoint: /mnt/mchennoufi-d-392698ae86c44ed6-pvc-test-342a97e0345747fa
+  command: "python3 -u main.py --operator=jobset --sleep=300"
+  engineName: main-aws-dev
 
   types:
     master:
