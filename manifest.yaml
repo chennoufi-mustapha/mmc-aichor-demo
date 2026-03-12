@@ -12,7 +12,7 @@ spec:
   operator: jobset
   image: image
   command: "python3 -u main.py --operator=jobset --sleep=3000 --tb-write=True"
-  timeout: "4m"
+  engineName: mchennoufi-dev-aks
 
   tensorboard:
     enabled: true
