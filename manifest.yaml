@@ -12,10 +12,7 @@ spec:
   operator: kuberay
   image: image
   command: "python3 -u main.py --operator=kuberay --sleep=300"
-  engineName: aks-dev-creation
-
-  debug:
-    jupyter: false
+  engineName: main-aks-dev
 
 
   types:
