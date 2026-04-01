@@ -11,7 +11,7 @@ builder:
 spec:
   operator: jobset
   image: image
-  command: "python3 -u main.py --operator=jobset --sleep=300"
+  command: "python3 -u main.py --operator=jobset --sleep=300" 
   engineName: main-aks-dev
 
 
