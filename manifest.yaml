@@ -11,13 +11,12 @@ builder:
 spec:
   operator: kuberay
   image: image
-  command: "python3 -u main.py --operator=kuberay --sleep=300 --tb-write=True"
+  command: "python3 -u main.py --operator=kuberay --sleep=300"
+  engineName: aks-dev-creation
 
   debug:
     jupyter: false
 
-  tensorboard:
-    enabled: true
 
   types:
     Head:
@@ -29,6 +28,6 @@ spec:
       - name: cpu-workers
         count: 1
         resources:
-          cpus: 5
+          cpus: 1
           ramRatio: 2
           shmSizeGB: 0
