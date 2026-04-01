@@ -12,7 +12,8 @@ spec:
   operator: kuberay
   image: image
   command: "python3 -u main.py --operator=kuberay --sleep=300"
-  engineName: main-aks-dev
+  engineName: aks-dev-creation
+
 
 
   types:
