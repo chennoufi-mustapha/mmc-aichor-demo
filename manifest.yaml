@@ -12,7 +12,7 @@ spec:
   operator: jobset
   image: image
   command: "python3 -u main.py --operator=jobset --sleep=300 --tb-write=True"
-  engineName: mchennoufi-eqx-dev
+
 
   tensorboard:
     enabled: true
