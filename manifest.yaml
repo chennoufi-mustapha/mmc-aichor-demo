@@ -12,6 +12,10 @@ spec:
   operator: kuberay
   image: image
   command: "python3 -u main.py --operator=kuberay --sleep=300 --tb-write=True"
+  storage:
+   attachExistingPVCs:
+    - name: mchennoufi-d-f794a1405d924441-kyber-pvc-440343be21ec4a43
+      mountPoint: /mnt/mchennoufi-d-f794a1405d924441-kyber-pvc-440343be21ec4a43
 
   debug:
     jupyter: false
