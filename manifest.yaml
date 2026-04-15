@@ -12,7 +12,7 @@ spec:
   operator: kuberay
   image: image
   command: "python3 -u main.py --operator=kuberay --sleep=3000 --tb-write=True"
-  engineName: main-aks-dev
+  engineName: main-aws-dev
 
   debug:
     jupyter: false
