@@ -12,7 +12,7 @@ spec:
   operator: jobset
   image: image
   command: "python3 -u main.py --operator=jobset --sleep=3000"
-  engineName: main-gcp-dev-2
+  engineName: main-gcp-dev-v2
 
 
   types:
