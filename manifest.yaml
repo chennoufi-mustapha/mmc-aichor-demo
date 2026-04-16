@@ -9,17 +9,23 @@ builder:
   dockerfile: ./build/Dockerfile
 
 spec:
-  operator: pytorch
+  operator: jobset
   image: image
-  command: "python3 -u main.py --operator=pytorch --sleep=3000 --tb-write=True"
+  command: "python3 -u main.py --operator=jobset --sleep=3000 --tb-write=True"
 
   tensorboard:
     enabled: true
 
   types:
+    master:
+      count: 1
+      resources:
+        cpus: 1
+        ramRatio: 2
+        shmSizeGB: 0
     worker:
-      count: 2
+      count: 1
       resources:
         cpus: 10
-        ramRatio: 2
+        ramRatio: 4
         shmSizeGB: 0
