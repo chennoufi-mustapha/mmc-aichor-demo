@@ -1,0 +1,9 @@
+[project]
+name = "pytorch-gangscheduling-demo"
+version = "0.1.0"
+description = "PyTorch gang scheduling examples"
+requires-python = ">=3.11"
+
+dependencies = [
+    "torch==2.12.1",
+]
