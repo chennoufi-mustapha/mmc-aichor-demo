@@ -9,18 +9,13 @@ This project aims to get up to speed with AIchor by going through the whole proc
 
 ## How to use it ?
 
-You can find multiple manifests samples in the `manifests` directories. If you want to try hugging face accelerate for example, all you need to do is to copy it:
+You can find multiple manifests samples in the `aichor_manifests` directories. If you want to try hugging face accelerate for example, all you need to do is to copy it:
 
 ```bash
-$ cp hugging-face-accelerate/manifests/single_worker/manifest.1-wrkr-1-a100-80gb.yaml manifest.yaml
 
-# also works with
-# cp smoke-test/manifests/manifest.kuberay.sample.yaml manifest.yaml
-# cp smoke-test/manifests/manifest.pytorch.sample.yaml manifest.yaml
-# cp parallel-jobs-demo/manifests/manifest.yaml manifest.yaml
+$ git add aichor_manifests/hugging-face-accelerate/rdma/1_worker/manifest.1wrkr-1-h100-80gb.yaml
+$ git commit -m "aichor[hugging-face-accelerate/rdma/1_worker/manifest.1wrkr-1-h100-80gb.yaml]: experiment" # commit has "aichor[<manifest-path>]: " to trigger experiment where `<manifest-path>` is the path of manifest relative to the `aichor_manifests/` directory
 
-$ git add manifest.yaml
-$ git commit -m "exp: eriment" # commit has to start by "exp: " to trigger experiment
 $ git push
 ```
 
