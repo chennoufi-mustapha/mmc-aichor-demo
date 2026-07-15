@@ -1,6 +1,6 @@
 # JAX gang scheduling examples
 
-Each script here is tightly coupled: every process calls `jax.distributed.initialize` and blocks until all `num_processes` hosts have joined. If the cluster only has room for some of the hosts, the ones that are up sit inside that call forever, holding their resources while waiting for hosts that may never be scheduled.
+Each script here is tightly coupled: every process calls `jax.distributed.initialize` and blocks until all `num_processes` hosts have joined. Here we see the clear need for gangscheduling because if the cluster only has room for some of the hosts, the ones that are up sit inside that call forever, holding their resources while waiting for hosts that may take a long time to be scheduled. So we see the need here and in similar scenarios to enable the gangscheduling feature to make sure pods don't run needlessly on the cluster waiting for the others to be scheduled.
 
 ## Environment variables
 

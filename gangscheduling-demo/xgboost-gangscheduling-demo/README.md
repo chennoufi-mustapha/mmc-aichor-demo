@@ -1,6 +1,6 @@
 # XGBoost gang scheduling examples
 
-Each script here is tightly coupled: rank 0 starts a tracker that every rank (including rank 0 itself) must connect to before any collective call can proceed. If the cluster only has room for some of the ranks, the ones that are up sit retrying the connection, holding their resources while waiting for ranks that may never be scheduled.
+Each script here is tightly coupled: rank 0 starts a tracker that every rank (including rank 0 itself) must connect to before any collective call can proceed. If the cluster only has room for some of the ranks, the ones that are up sit retrying the connection, holding their resources while waiting for ranks that may take a long time to be scheduled. So we see the need here and in similar scenarios to enable the gangscheduling feature to make sure pods don't run needlessly on the cluster waiting for the others to be scheduled.
 
 ## Environment variables
 

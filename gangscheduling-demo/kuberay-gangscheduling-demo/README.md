@@ -1,8 +1,6 @@
 # Ray (kuberay) gang scheduling examples
 
-Ray's own explicit gang scheduling primitive is the `PlacementGroup`: `pg.ready()` blocks until every bundle in the group has been placed together, so either the cluster has room for the whole group or none of it gets scheduled. The actor-based examples show the same requirement without a placement group, by having actors that must all be alive to complete a synchronous round.
-
-Note this only applies to the *fixed* set of actors reserved up front. Workers added later by the cluster autoscaler don't need to go through the same all-or-nothing group, since each one is useful as soon as it lands (see the top-level README).
+In this section we see the cases in which gangscheduling for Ray is required. Previously, by default, Ray would set up something similar to this by withholding to submit the exp to the ray cluster until all the pods in the raycluster were ready. Since this would mean wasted resources until the experiment fits itself into the cluster one by one, the default behavior will now be the cluster will scale up as the cluster demands it and not automatically assume that all the workers requested are necessary at startup. If all pods are required at startup, which is what these demos are to showcase, gangscheduling must be enabled in the exp manifest.
 
 ## Environment variables
 

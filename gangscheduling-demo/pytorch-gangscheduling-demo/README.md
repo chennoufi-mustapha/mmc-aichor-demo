@@ -1,6 +1,6 @@
 # PyTorch gang scheduling examples
 
-Each script here is tightly coupled: every rank calls `dist.init_process_group` and blocks until all `WORLD_SIZE` ranks have joined. If the cluster only has room for some of the ranks, the ones that are up sit inside that call forever, holding their resources while waiting for ranks that may never be scheduled.
+Each script here is tightly coupled: every rank calls `dist.init_process_group` and blocks until all `WORLD_SIZE` ranks have joined. If the cluster only has room for some of the ranks, the ones that are up sit inside that call forever, holding their resources while waiting for ranks that may take a long time to be scheduled. So we see the need here and in similar scenarios to enable the gangscheduling feature to make sure pods don't run needlessly on the cluster waiting for the others to be scheduled.
 
 ## Environment variables
 
