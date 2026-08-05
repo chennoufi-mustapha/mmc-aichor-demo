@@ -1,3 +1,4 @@
+# aichor[smoke-test/manifest.kuberay.sample.yaml]: operator
 # yaml-language-server: $schema=https://instadeep.aichor.ai/schema/latest/manifest.schema.json
 
 kind: AIchorManifest
@@ -6,7 +7,7 @@ apiVersion: 0.2.2
 builder:
   image: image
   context: smoke-test # smoke-test folder
-  dockerfile: ./build/ray.Dockerfile #  need ray installed
+  dockerfile: ./build/ray.Dockerfile #  need ray installed 
 
 spec:
   operator: kuberay
