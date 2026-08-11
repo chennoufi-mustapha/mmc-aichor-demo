@@ -1,4 +1,4 @@
-# aichor[smoke-test/manifest.kuberay.sample.yaml]: operator          
+# aichor[smoke-test/manifest.kuberay.sample.yaml]: operator           
 # yaml-language-server: $schema=https://instadeep.aichor.ai/schema/latest/manifest.schema.json 
 
 kind: AIchorManifest
