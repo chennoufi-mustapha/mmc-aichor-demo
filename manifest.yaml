@@ -1,5 +1,5 @@
 # aichor[smoke-test/manifest.kuberay.sample.yaml]: operator              
-# yaml-language-server: $schema=https://instadeep.aichor.ai/schema/latest/manifest.schema.json 
+# yaml-language-server: $schema=https://instadeep.aichor.ai/schema/latest/manifest.schema.json  
 
 kind: AIchorManifest
 apiVersion: 0.2.2 
@@ -13,7 +13,7 @@ spec:
   operator: kuberay
   image: image
   command: "python3 -u main.py --operator=kuberay --sleep=300 --tb-write=True"
-  engineName: mmc-aws-nex
+  #engineName: mmc-aws-nex
 
   debug:
     jupyter: false
