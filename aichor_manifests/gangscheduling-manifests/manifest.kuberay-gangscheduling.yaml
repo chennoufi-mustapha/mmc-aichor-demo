@@ -1,0 +1,29 @@
+# yaml-language-server: $schema=https://instadeep.aichor.ai/schema/latest/manifest.schema.json
+
+kind: AIchorManifest
+apiVersion: 0.2.3
+
+builder:
+  image: kuberay-gangscheduling-job
+  context: gangscheduling-demo/kuberay-gangscheduling-demo
+  dockerfile: ./Dockerfile
+
+spec:
+  operator: kuberay
+  image: kuberay-gangscheduling-job
+  command: "python -u example_placement_group.py"
+
+  types:
+    Head:
+      resources:
+        cpus: 1
+        ramRatio: 2
+        shmSizeGB: 0
+
+    Workers:
+      - name: "cpu-workers"
+        count: 4
+        resources:
+          cpus: 1
+          ramRatio: 2
+          shmSizeGB: 0
