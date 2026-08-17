@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=https://instadeep.aichor.ai/schema/latest/manifest.schema.json
+
+kind: AIchorManifest
+apiVersion: 0.2.3
+
+builder:
+  image: xgboost-gangscheduling-job
+  context: gangscheduling-demo/xgboost-gangscheduling-demo
+  dockerfile: ./Dockerfile
+
+spec:
+  operator: xgboost
+  image: xgboost-gangscheduling-job
+  command: "python -u example_train.py"
+
+  types:
+    worker:
+      count: 2
+      resources:
+        cpus: 1
+        ramRatio: 1
+        shmSizeGB: 0

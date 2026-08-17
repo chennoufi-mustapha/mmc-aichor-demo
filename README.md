@@ -14,7 +14,7 @@ You can find multiple manifests samples in the `aichor_manifests` directories. I
 ```bash
 
 $ git add aichor_manifests/hugging-face-accelerate/rdma/1_worker/manifest.1wrkr-1-h100-80gb.yaml
-$ git commit -m "aichor[hugging-face-accelerate/rdma/1_worker/manifest.1wrkr-1-h100-80gb.yaml]: experiment" # commit has "aichor[<manifest-path>]: " to trigger experiment where `<manifest-path>` is the path of manifest relative to the `aichor_manifests/` directory
+$ git commit -m "aichor[hugging-face-accelerate/rdma/1_worker/demo-manifest.yaml]: experiment" # commit has "aichor[<manifest-path>]: " to trigger experiment where `<manifest-path>` is the path of manifest relative to the `aichor_manifests/` directory
 
 $ git push
 ```
