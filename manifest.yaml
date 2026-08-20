@@ -32,7 +32,7 @@ spec:
 
     Workers:
       - name: cpu-workers
-        count: 2
+        count: 200
         resources:
           cpus: 1
           ramRatio: 2
