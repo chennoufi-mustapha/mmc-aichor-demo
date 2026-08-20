@@ -10,10 +10,13 @@ builder:
   dockerfile: ./build/ray.Dockerfile #  need ray installed  
 
 spec:
+  gangScheduling:
+    enabled: true
+    autoScalingScaleDown: 2
   operator: kuberay
   image: image
   command: "python3 -u main.py --operator=kuberay --sleep=300 --tb-write=True"
-  engineName: onprem-eqx
+
 
   debug:
     jupyter: false
@@ -29,7 +32,7 @@ spec:
 
     Workers:
       - name: cpu-workers
-        count: 1
+        count: 2
         resources:
           cpus: 1
           ramRatio: 2
