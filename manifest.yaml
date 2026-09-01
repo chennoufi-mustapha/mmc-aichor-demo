@@ -12,7 +12,8 @@ builder:
 spec:
   operator: kuberay
   image: image
-  command: "python3 -u main.py --operator=kuberay --sleep=1000 --tb-write=True"
+  command: "python3 -u main.py --operator=kuberay --sleep=300 --tb-write=True"
+  engineName: kyber-dev
 
   debug:
     jupyter: false
