@@ -12,7 +12,7 @@ builder:
 spec:
   operator: kuberay
   image: image
-  command: "python3 -u main.py --operator=kuberay --sleep=1000 --tb-write=True"
+  command: "python3 -u main.py --operator=kuberay --sleep=100 --tb-write=True"
 
   debug:
     jupyter: false
