@@ -4,6 +4,9 @@
 kind: AIchorManifest
 apiVersion: 0.2.2 
 
+tags:
+  - "kuberay"
+
 builder:
   image: image
   context: smoke-test # smoke-test folder
