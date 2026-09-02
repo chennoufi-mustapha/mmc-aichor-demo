@@ -1,40 +1,35 @@
-# aichor[smoke-test/manifest.kuberay.sample.yaml]: operator               
-# yaml-language-server: $schema=https://instadeep.aichor.ai/schema/latest/manifest.schema.json  
+# yaml-language-server: $schema=https://instadeep.aichor.ai/schema/latest/manifest.schema.json
 
 kind: AIchorManifest
-apiVersion: 0.2.2 
+apiVersion: 0.2.2
 
 tags:
-  - "kuberay"
+  - "jobset"
+  - "operator"
 
 builder:
   image: image
   context: smoke-test # smoke-test folder
-  dockerfile: ./build/ray.Dockerfile #    v need ray installed   
+  dockerfile: ./build/Dockerfile
 
 spec:
-  operator: kuberay
+  operator: jobset
   image: image
-  command: "python3 -u main.py --operator=kuberay --sleep=300 --tb-write=True"
-
-
-  debug:
-    jupyter: false
+  command: "python3 -u main.py --operator=jobset --sleep=300 --tb-write=True"
 
   tensorboard:
     enabled: true
 
   types:
-    Head:
+    master:
+      count: 1
       resources:
         cpus: 1
         ramRatio: 2
-
-    Workers:
-      - name: cpu-workers
-        count: 2
-        resources:
-          cpus: 1
-          ramRatio: 2
-          shmSizeGB: 0
-
+        shmSizeGB: 0
+    worker:
+      count: 1
+      resources:
+        cpus: 1
+        ramRatio: 2
+        shmSizeGB: 0
