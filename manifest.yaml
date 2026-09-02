@@ -4,8 +4,7 @@ kind: AIchorManifest
 apiVersion: 0.2.2
 
 tags:
-  - "jobset"
-  - "operator"
+
 
 builder:
   image: image
