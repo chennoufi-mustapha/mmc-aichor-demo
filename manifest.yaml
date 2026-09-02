@@ -4,7 +4,7 @@ kind: AIchorManifest
 apiVersion: 0.2.2
 
 tags:
-
+- "this IS 2 t-a_g*s$"
 
 builder:
   image: image
